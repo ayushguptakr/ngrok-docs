@@ -1,14 +1,33 @@
----
-hide_table_of_contents: true
-displayed_sidebar: docs
----
+<html>
+<body>
+<title> Ayush Gupta 7d681637 </title>
+<h1> Welcome to my guessing game</h1>
 
-import ErrorDetails from "/src/components/ErrorDetails";
-
-# ERR_NGROK_3200
-
-### Message
-
-Tunnel `HOSTNAME` not found
-
-<ErrorDetails error="err_ngrok_3200" />
+<?php
+$correctnumber=46; //change this number //
+if(isset($_GET['guess']))
+{
+  if (is_numeric($_GET['guess'])===FALSE)
+ {
+echo "Your guess is not a number";
+}
+else if ($_GET['guess']<$correctnumber)
+ {
+echo "Your guess is too low";
+}
+else if ($_GET['guess']>$correctnumber)
+ {
+echo "Your guess is too high";
+}
+else if ($_GET['guess']==$correctnumber)
+ {
+echo "Congratulations - You are right";
+}
+}
+else
+{
+echo "Missing guess parameter <br> Your guess is too short";
+}
+?>
+</body>
+</html>
